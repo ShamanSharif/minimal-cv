@@ -29,6 +29,11 @@ jobs:
           chmod 600 ~/.ssh/config
           ssh-keyscan -t rsa git-codecommit.us-east-1.amazonaws.com >> ~/.ssh/known_hosts
 
+      - name: Fetch all branches and tags
+        run: |
+          git fetch --all
+          git fetch --tags
+
       - name: Display Git status
         run: git status
 
