@@ -28,6 +28,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           chmod 600 ~/.ssh/config
           ssh-keyscan -t rsa git-codecommit.us-east-1.amazonaws.com >> ~/.ssh/known_hosts
+          ssh -o StrictHostKeyChecking=no git-codecommit.us-east-1.amazonaws.com
 
       - name: Push to AWS CodeCommit
         run: |
