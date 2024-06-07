@@ -3,15 +3,16 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8
+      dart: 3.4.1
     commands:
-      - echo "Installing dependencies (if any)..."
+      - dart pub get
   pre_build:
     commands:
-      - echo "Preparing for build..."
+      - dart_frog build
   build:
     commands:
-      - echo "Hello, World!"
+      - cd build
+      - docker build -t shamansharif/minimal-cv .
   post_build:
     commands:
       - echo "Build completed."
