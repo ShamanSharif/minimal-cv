@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo "Installing dependencies (if any)..."
+  pre_build:
+    commands:
+      - echo "Preparing for build..."
+  build:
+    commands:
+      - echo "Hello, World!"
+  post_build:
+    commands:
+      - echo "Build completed."
+
+artifacts:
+  files:
+    - "**/*"
